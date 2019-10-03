@@ -62,13 +62,14 @@ public class MainController {
     return rs.getResource(id);
     }
     
-    @RequestMapping("/api/events/{resource_id}")
-    public Optional<Event> getEventsByResourceById(@PathVariable Long resource_id) {
-    return es.getEventsByResource(resource_id);
+//    @RequestMapping("/api/events/{resource_id}")
+//    public List<Event> getEventsByResourceById(@PathVariable("resource_id") Long resource_id, @Value("${resourceEventquery}") String query) {
+//    	System.out.println(query);
+//    return es.getEventsByResource(resource_id,query);
      
 
     
-    }
+//    }
   
 
   

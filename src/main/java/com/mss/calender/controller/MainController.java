@@ -2,7 +2,10 @@
 package com.mss.calender.controller;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Optional;
+
+import javax.swing.text.html.parser.Entity;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -16,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
 import com.mss.calender.domain.Event;
+import com.mss.calender.domain.EventResource;
 import com.mss.calender.domain.Resource;
 import com.mss.calender.repository.EventRepository;
 import com.mss.calender.repository.ResourceRepository;
@@ -62,17 +66,13 @@ public class MainController {
     return rs.getResource(id);
     }
     
-//    @RequestMapping("/api/events/{resource_id}")
-//    public List<Event> getEventsByResourceById(@PathVariable("resource_id") Long resource_id, @Value("${resourceEventquery}") String query) {
+    @RequestMapping("/api/events/{resource_id}")
+    public List<Event> getEventsByResourceById(@PathVariable("resource_id") Long resource_id) {
 //    	System.out.println(query);
-//    return es.getEventsByResource(resource_id,query);
-     
+    	System.out.println(resource_id);
+     return es.getEventsByResource(resource_id);
+//     return "abc";
 
-    
-//    }
-  
-
-  
-
+    }
 
 }
